@@ -42,9 +42,17 @@
     bot.login(token).then(function() {
       console.log("Ready!")
     }).catch(function(err) {
-      console.log("Error")
+      console.log("Error " + err)
     })
   }
+
+  bot.on("error", function(err) {
+    console.log(err)
+  })
+
+  bot.on("ready", function() {
+    console.log("Ready event")
+  })
 
   // Block and block menu descriptions
   var descriptor = {
