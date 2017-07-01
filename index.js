@@ -1,8 +1,6 @@
-let Discord = require("discord.js")
-let bot = new Discord.Client()
 (function(ext) {
-  var alarm_went_off = false; // This becomes true after the alarm goes off
-
+  let Discord = require("discord.js")
+  let bot = new Discord.Client()
   // Cleanup function when the extension is unloaded
   ext._shutdown = function() {};
 
