@@ -13,23 +13,18 @@
     };
   };
 
-  ext.set_alarm = function(time) {
-    window.setTimeout(function() {
-      alarm_went_off = true;
-    }, time * 1000);
-  };
-
   let lastMessage = null
   let messageTriggered = true
 
   bot.on("message", function (message) {
+    console.log("Got message!")
     lastMessage = message
-    messageTriggered = true
+    messageTriggered = false
   })
 
   ext.when_message = function() {
-    if(messageTriggered) {
-      messageTriggered = false
+    if(!messageTriggered) {
+      messageTriggered = true
       return true
     } else return false
   };
