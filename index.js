@@ -23,6 +23,7 @@
   })
 
   ext.when_message = function() {
+    console.log("Waiting for message")
     if(!messageTriggered) {
       messageTriggered = true
       return true
