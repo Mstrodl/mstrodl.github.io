@@ -23,7 +23,6 @@
   })
 
   ext.when_message = function() {
-    console.log("Waiting for message")
     if(!messageTriggered) {
       messageTriggered = true
       return true
@@ -39,6 +38,7 @@
   }
 
   ext.login = function (token) {
+    console.log("Logging in with token: " + token)
     bot.login(token).then(function() {
       console.log("Ready!")
     }).catch(function(err) {
