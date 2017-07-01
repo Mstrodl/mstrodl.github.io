@@ -39,7 +39,11 @@
   }
 
   ext.login = function (token) {
-    bot.login(token)
+    bot.login(token).then(function() {
+      console.log("Ready!")
+    }).catch(function(err) {
+      console.log("Error")
+    })
   }
 
   // Block and block menu descriptions
